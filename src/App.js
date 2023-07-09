@@ -44,7 +44,7 @@ function App() {
           <option value="파란색바지">파란색바지</option>
           <option value="빨간색바지">빨간색바지</option>
         </select>
-        <p>선택한 아이템: {selectedItem}</p>
+        <p>{selectedItem}</p>
       </div>
       <input
         value={값}
