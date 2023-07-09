@@ -7,9 +7,30 @@ function App() {
     { text: "공부하기", like: 0, liked: false },
     { text: "운동하기", like: 0, liked: false },
   ]);
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <>
+      <div style={{ backgroundColor: isChecked ? "black" : "white" }}>
+        <label>
+          <span
+            style={{
+              color: isChecked ? "white" : "black",
+              fontWeight: isChecked ? "bold" : "normal",
+            }}
+          >
+            {isChecked ? "블랙" : "화이트"}
+          </span>
+          <br />
+          <input
+            type="checkbox"
+            checked={isChecked}
+            onChange={() => {
+              setIsChecked(!isChecked);
+            }}
+          />
+        </label>
+      </div>
       <input
         value={값}
         onChange={(e) => {
@@ -29,7 +50,7 @@ function App() {
           <div key={index}>
             <span>
               <h1>{t.text}</h1>
-              <p>Like: {t.like}</p> {/* 좋아요 수 표시 */}
+              <p>Like: {t.like}</p>
             </span>
             <button
               onClick={() => {
