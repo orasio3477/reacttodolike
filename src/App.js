@@ -8,6 +8,7 @@ function App() {
     { text: "운동하기", like: 0, liked: false },
   ]);
   const [isChecked, setIsChecked] = useState(false);
+  const [selectedItem, setSelectedItem] = useState("");
 
   return (
     <>
@@ -30,6 +31,20 @@ function App() {
             }}
           />
         </label>
+      </div>
+      <div>
+        <select
+          value={selectedItem}
+          onChange={(e) => {
+            setSelectedItem(e.target.value);
+          }}
+        >
+          <option value="">-- 선택하세요 --</option>
+          <option value="검은색바지">검은색바지</option>
+          <option value="파란색바지">파란색바지</option>
+          <option value="빨간색바지">빨간색바지</option>
+        </select>
+        <p>선택한 아이템: {selectedItem}</p>
       </div>
       <input
         value={값}
